@@ -82,8 +82,8 @@ class Engine(EngineBase):
         # MAXBLOCK must be at least as big as...
         new_maxblock = max(
             # (len(options['exif']) if 'exif' in options else 0) + 5,  # ...the entire exif header block
-            img.size[0] * 4,  # ...a complete scan line
-            3 * img.size[0] * img.size[1],  # ...3 bytes per every pixel in the image
+            image.size[0] * 4,  # ...a complete scan line
+            3 * image.size[0] * image.size[1],  # ...3 bytes per every pixel in the image
         )
         if new_maxblock < ImageFile.MAXBLOCK:
             raise
